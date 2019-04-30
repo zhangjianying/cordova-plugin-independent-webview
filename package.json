@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-independent-webview",
+  "version": "1.0.0",
+  "description": "cordova-plugin-independent-webview.",
+  "cordova": {
+    "id": "cordova-plugin-independent-webview",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoLSN/cordova-plugin-android-permission.git"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "author": "zhangjianying",
+  "license": "BSD"
+}

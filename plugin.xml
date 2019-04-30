@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.zsoftware.Independentwebview" version="1.0.0"
+xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>独立进程WebView</name>
+    <js-module name="IndependentwebviewPlugin" src="www/independentWebview.js">
+        <clobbers target="IndependentwebviewPlugin" />
+    </js-module>
+
+ 		<name>独立进程WebView插件</name>
+    <description>
+        Android端独立进程WebView
+    </description>
+    <license>MIT</license>
+
+		 <engines>
+        <engine name="cordova" version=">=6.0.0" />
+    </engines>
+
+	<platform name="android">
+		<source-file src="src/android/IndependentwebviewPlugin.java"
+			target-dir="src/com/zsoftware/independentwebview"/>
+
+		<config-file target="res/xml/config.xml" parent="/*">
+		  <feature name="IndependentwebviewPlugin">
+			<param name="android-package" value="com.zsoftware.independentwebview.IndependentwebviewPlugin"/>
+		  </feature>
+		</config-file>
+
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+	  	 <activity
+            android:name="com.zsoftware.independentwebview.IndependentWebViewActivity"
+						android:theme="@android:style/Theme.NoTitleBar"
+            android:process=":H5" ></activity>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+				 <uses-permission android:name="android.permission.INTERNET" />
+		</config-file>
+
+		<framework src="src/android/independentwebview.gradle" custom="true" type="gradleReference"/>
+		<resource-file src="src/android/independentwebview.aar" target="libs/independentwebview.aar"/>
+
+  </platform>
+</plugin>
